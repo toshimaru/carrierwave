@@ -21,8 +21,9 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = ">= 2.0.0"
 
-  s.add_dependency "activesupport", ">= 4.0.0"
   s.add_dependency "activemodel", ">= 4.0.0"
+  s.add_dependency "activesupport", ">= 4.0.0"
+  s.add_dependency "addressable", ">= 2.4"
   s.add_dependency "mime-types", ">= 1.16"
   if RUBY_ENGINE == 'jruby'
     s.add_development_dependency 'activerecord-jdbcpostgresql-adapter'

@@ -1,4 +1,4 @@
-require 'open-uri'
+require 'addressable/uri'
 
 module CarrierWave
   module Uploader
@@ -83,7 +83,7 @@ module CarrierWave
       # [url (String)] The URL where the remote file is stored
       #
       def process_uri(uri)
-        URI.parse(uri)
+        Addressable::URI.parse(uri)
       rescue URI::InvalidURIError
         uri_parts = uri.split('?')
         # regexp from Ruby's URI::Parser#regexp[:UNSAFE], with [] specifically removed
