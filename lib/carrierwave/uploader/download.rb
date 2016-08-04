@@ -1,3 +1,4 @@
+require 'open-uri'
 require 'addressable/uri'
 
 module CarrierWave
@@ -39,7 +40,7 @@ module CarrierWave
             headers = @remote_headers.
               reverse_merge('User-Agent' => "CarrierWave/#{CarrierWave::VERSION}")
 
-            @file = Kernel.open(@uri.to_s, headers)
+            @file = Kernel.open(@uri.normalize, headers)
             @file = @file.is_a?(String) ? StringIO.new(@file) : @file
           end
           @file
